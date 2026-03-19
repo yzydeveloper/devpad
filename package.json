@@ -1,0 +1,166 @@
+{
+  "name": "devpad",
+  "displayName": "DevPad",
+  "description": "Workspace-scoped developer notes in the VSCode sidebar.",
+  "version": "0.0.1",
+  "publisher": "local",
+  "private": true,
+  "engines": {
+    "vscode": "^1.88.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onView:devpad.sidebar",
+    "onCustomEditor:devpad.noteEditor",
+    "onCommand:devpad.openPanel",
+    "onCommand:devpad.addNote",
+    "onCommand:devpad.openNote",
+    "onCommand:devpad.renameNote",
+    "onCommand:devpad.editNoteTags",
+    "onCommand:devpad.deleteNote",
+    "onCommand:devpad.searchNotes",
+    "onCommand:devpad.filterByTag",
+    "onCommand:devpad.clearFilters",
+    "onCommand:devpad.saveSelection",
+    "onCommand:devpad.openSnippetSource"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "devpad",
+          "title": "DevPad",
+          "icon": "assets/devpad.svg"
+        }
+      ]
+    },
+    "views": {
+      "devpad": [
+        {
+          "id": "devpad.sidebar",
+          "name": "DevPad"
+        }
+      ]
+    },
+    "customEditors": [
+      {
+        "viewType": "devpad.noteEditor",
+        "displayName": "DevPad Note",
+        "selector": [
+          {
+            "filenamePattern": "*.devpad-note"
+          }
+        ],
+        "priority": "default"
+      }
+    ],
+    "commands": [
+      {
+        "command": "devpad.openPanel",
+        "title": "DevPad: Open Panel",
+        "icon": "$(book)"
+      },
+      {
+        "command": "devpad.addNote",
+        "title": "DevPad: Add Note",
+        "icon": "$(add)"
+      },
+      {
+        "command": "devpad.openNote",
+        "title": "DevPad: Open Note"
+      },
+      {
+        "command": "devpad.renameNote",
+        "title": "DevPad: Rename Note",
+        "icon": "$(edit)"
+      },
+      {
+        "command": "devpad.editNoteTags",
+        "title": "DevPad: Edit Note Tags",
+        "icon": "$(tag)"
+      },
+      {
+        "command": "devpad.deleteNote",
+        "title": "DevPad: Delete Note",
+        "icon": "$(trash)"
+      },
+      {
+        "command": "devpad.searchNotes",
+        "title": "DevPad: Search Notes",
+        "icon": "$(search)"
+      },
+      {
+        "command": "devpad.filterByTag",
+        "title": "DevPad: Filter Notes By Tag",
+        "icon": "$(tag)"
+      },
+      {
+        "command": "devpad.clearFilters",
+        "title": "DevPad: Clear Filters",
+        "icon": "$(clear-all)"
+      },
+      {
+        "command": "devpad.saveSelection",
+        "title": "DevPad: Save Selection"
+      },
+      {
+        "command": "devpad.openSnippetSource",
+        "title": "DevPad: Open Snippet Source"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "devpad.addNote",
+          "when": "view == devpad.sidebar",
+          "group": "navigation"
+        },
+        {
+          "command": "devpad.searchNotes",
+          "when": "view == devpad.sidebar",
+          "group": "navigation"
+        },
+        {
+          "command": "devpad.filterByTag",
+          "when": "view == devpad.sidebar",
+          "group": "navigation"
+        },
+        {
+          "command": "devpad.clearFilters",
+          "when": "view == devpad.sidebar",
+          "group": "navigation"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "devpad.renameNote",
+          "when": "view == devpad.sidebar && viewItem == devpadNote",
+          "group": "inline"
+        },
+        {
+          "command": "devpad.editNoteTags",
+          "when": "view == devpad.sidebar && viewItem == devpadNote",
+          "group": "inline"
+        },
+        {
+          "command": "devpad.deleteNote",
+          "when": "view == devpad.sidebar && viewItem == devpadNote",
+          "group": "inline"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "build": "tsc -p .",
+    "watch": "tsc -w -p .",
+    "lint": "tsc -p . --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.10",
+    "@types/vscode": "^1.88.0",
+    "typescript": "^5.5.4"
+  }
+}
