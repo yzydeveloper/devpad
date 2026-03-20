@@ -4,6 +4,10 @@
   "description": "Workspace-scoped developer notes in the VSCode sidebar.",
   "version": "1.0.0",
   "publisher": "yzydeveloper",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yzydeveloper/devpad.git"
+  },
   "engines": {
     "vscode": "^1.88.0"
   },
