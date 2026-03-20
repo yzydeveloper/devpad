@@ -2,9 +2,8 @@
   "name": "devpad",
   "displayName": "DevPad",
   "description": "Workspace-scoped developer notes in the VSCode sidebar.",
-  "version": "0.0.1",
-  "publisher": "local",
-  "private": true,
+  "version": "1.0.0",
+  "publisher": "yzydeveloper",
   "engines": {
     "vscode": "^1.88.0"
   },
