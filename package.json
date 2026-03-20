@@ -2,7 +2,7 @@
   "name": "devpad",
   "displayName": "DevPad",
   "description": "Workspace-scoped developer notes in the VSCode sidebar.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "yzydeveloper",
   "icon": "assets/icon.png",
   "license": "MIT",
