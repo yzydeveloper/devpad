@@ -41,7 +41,8 @@
       "devpad": [
         {
           "id": "devpad.sidebar",
-          "name": "DevPad"
+          "name": "DevPad",
+          "icon": "assets/devpad.svg"
         }
       ]
     },
