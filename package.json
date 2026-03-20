@@ -4,6 +4,7 @@
   "description": "Workspace-scoped developer notes in the VSCode sidebar.",
   "version": "1.0.0",
   "publisher": "yzydeveloper",
+  "icon": "assets/icon.png",
   "license": "MIT",
   "repository": {
     "type": "git",
